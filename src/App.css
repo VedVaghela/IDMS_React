@@ -1,38 +1,81 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display:flex;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(42, 43, 42);
+}
+
+.mainclass{
+  display: flex;
+  flex-direction: row;
+}
+
+.imgbox {
+  bottom: 0;
+  left:0;
+}
+
+.maincontainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
+}
+
+.pagetitle {
+  color: whitesmoke;
+}
+
+.auth-form-container{
+  display: flex;
+  background-color: rgb(8, 167, 104);
+  padding: 20px 20px;
+  width: 100%;
+  border-radius: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+}
+ .LoginForm, .RegisterForm {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  color: azure;
+  text-align: left;
+  padding: 0.25rem 0;
+  font-size: 15px;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border:none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+input:focus{
+  outline: none;
+}
+
+button {
+  border:none;
   color: white;
+  padding: 20px;
+  width: 60%;
+  border-radius: 10px;
+  background-color: rgb(19, 115, 75);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.linkbutton {
+  background:none;
+  color: aliceblue;
+  width: 100%;
 }
