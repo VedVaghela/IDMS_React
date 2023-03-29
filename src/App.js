@@ -6,20 +6,27 @@ import {Login} from "./components/Login";
 import {Register} from "./components/Register";
 import {Dashboard} from "./components/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {historys} from './historys.js'
+// import { AuthContextProvider } from "./components/AuthContext";
 
 
 function App() {
 
   const [currentForm, setCurrentForm] = useState("Login");
+  
 
   const toggleForm = (formName) => {
     setCurrentForm(formName)
   }
 
   return (
-    <BrowserRouter>
+    // <AuthContextProvider>
+    <BrowserRouter history={historys}>
     <Routes>
-      <Route path="/" 
+      <Route path="/" element="Home">
+        
+      </Route>
+      <Route path="/signin" 
       element={<div className='App'>
       {
         currentForm === "Login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
@@ -30,7 +37,7 @@ function App() {
       </Route>
     </Routes>
     </BrowserRouter>
-    
+    // </AuthContextProvider>
   );
 }
 
