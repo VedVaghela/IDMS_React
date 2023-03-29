@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import drimg from './drimg.png';
+import drimg from '../assets/drimg.png';
+
 export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -18,7 +19,7 @@ export const Login = (props) => {
        <h1 className="pagetitle">Welcome to Doctor's Portal</h1>
         <div className="auth-form-container" >
         <form className="LoginForm" onSubmit={handleSubmit}>
-            <label htmlFor="email"> Username </label>
+            <label htmlFor="email"> Email </label>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" />
             <label htmlFor="password"> Password </label>
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" id="password" name="password" />
