@@ -7,6 +7,7 @@ import {Register} from "./components/Register";
 import {Dashboard} from "./components/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {historys} from './historys.js'
+import { BookAppointment } from "./components/BookAppointment";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -35,6 +36,7 @@ function App() {
       </Route>
       <Route path="/Dashboard" element={<Dashboard/>}>
       </Route>
+      <Route path="/book" element={<BookAppointment/>}></Route>
     </Routes>
     </BrowserRouter>
     // </AuthContextProvider>

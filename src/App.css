@@ -102,15 +102,15 @@ input:focus{
   outline: none;
 }
 
-button {
+/* button {
   border:none;
   color: white;
   padding: 20px;
   width: 60%;
   border-radius: 10px;
   /* background-color: rgb(19, 115, 75); */
-  background-color:  #C6FF7D;
-}
+  /* background-color:  #C6FF7D; */
+/* } */
 
 .name {
   display: flex;
@@ -328,4 +328,48 @@ color: black;
   width: 50%;
   height: 60%;
   border-radius: 50%;
+}
+
+/* booking box */
+.bookingBox{
+  position: absolute;
+  right:10vw;
+  top:20vh;
+  width: 65vw;
+  height: 50vh;
+  background-color: #b3b4ee;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1;
+  filter: drop-shadow(-12px 10px 10px rgba(0, 0, 0, 0.194));
+}
+
+
+.dateSelect {
+  width: 30%;
+}
+
+.bookbtn{
+  position: absolute;
+  right: 15vw;
+  bottom:20vh;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  background-color: #4e4999;
+  color: #ffffff;
+  border-style: none;
+}
+
+.AutoCompleteBox{
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.nurseimg{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30vw;
 }

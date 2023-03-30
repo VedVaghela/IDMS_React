@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import drimg from '../assets/drimg.png';
+import { renderHook } from "@testing-library/react";
 
 export const Register = (props) => {
 
@@ -14,37 +15,63 @@ export const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let data = {
-         email,
-         password,
-         fname,
-         lname,
-         phone
-        }
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json");
 
-        console.log(email);
-        fetch('https://it262-proj.onrender.com/users/register/', {
-         method: 'POST',
-         body: JSON.stringify(data),
-         headers: {
-            'Content-type': 'application/json',
-            'Accept': 'application/json'
-         },
-         redirect: 'follow'
-      })
-         .then((res) => res.json())
-         .then((data)=>console.log(data))
-         // .then((post) => {
-         //    setPosts((posts) => [post, ...posts]);
-         //    setEmail('');
-         //    setPassword('');
-         //    setFirstName('');
-         //    setLastName('');
-         //    setPhone('');
-         // })
-         .catch((err) => {
-            console.log(err.message);
-         });
+        var raw = JSON.stringify({
+          "email": "dharmik@gmail.com",
+          "password": "testing321",
+          "first_name": "ved",
+          "last_name": "vaghela",
+          "phone": "1234567890"
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        fetch("https://it262-proj.onrender.com/users/register/", requestOptions)
+          .then(response => { 
+            response.json()
+            console.log(response.json);
+         })
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+      //   let data = {
+      //    email,
+      //    password,
+      //    fname,
+      //    lname,
+      //    phone
+      //   }
+
+      //   console.log(email);
+      //   fetch('https://it262-proj.onrender.com/users/register/', {
+      //    method: 'POST',
+      //    body: JSON.stringify(data),
+      //    headers: {
+      //       'Content-type': 'application/json',
+      //       'Accept': 'application/json'
+      //    },
+      //    redirect: 'follow'
+      // })
+      //    .then((res) => res.json())
+      //    .then((data)=>console.log(data))
+      //    // .then((post) => {
+      //    //    setPosts((posts) => [post, ...posts]);
+      //    //    setEmail('');
+      //    //    setPassword('');
+      //    //    setFirstName('');
+      //    //    setLastName('');
+      //    //    setPhone('');
+      //    // })
+      //    .catch((err) => {
+      //       console.log(err.message);
+      //    });
 
             setEmail('');
             setPassword('');
