@@ -8,8 +8,9 @@ import { setAuthToken } from "../helpers/setAuthToken";
 export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const { login } = useContext(AuthContext);
 
+   
+    // const { login } = useContext(AuthContext);
     // const loginSubmit = async () => {
     //     let payload = {
     //       email: email.current.value,
@@ -20,24 +21,33 @@ export const Login = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(email)
+        
           //reqres registered sample user
         const loginPayload = {
-            email: email,
-            password: password
+            "email": email,
+            "password": password
         }
 
-        axios.post("https://it262-proj.onrender.com/users/login/", loginPayload)
+        const config = {
+            headers:{
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            //   "Authorization": "Basic e3tiYXNpY0F1dGhVc2VybmFtZX19Ont7YmFzaWNBdXRoUGFzc3dvcmR9fQ=="
+            }
+          };
+
+        axios.post("https://web-production-d445c.up.railway.app/users/login/", loginPayload, config)
         .then(response => {
         //get token from response
-        const token  =  response.data.token;
-
+        const token  =  response.data.data.access;
+        console.log(response.data.data.access)
         //set JWT token to local
-        localStorage.setItem("token", token);
-
+        sessionStorage.setItem("token", token);
+        console.log(token)
+        console.log(email)
         //set token to axios common header
         setAuthToken(token);
-
+        
         //redirect user to home page
       window.location.href = '/Dashboard'
     })

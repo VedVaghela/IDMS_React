@@ -112,6 +112,7 @@ input:focus{
   /* background-color:  #C6FF7D; */
 /* } */
 
+
 .name {
   display: flex;
   flex-direction: row;
@@ -150,6 +151,9 @@ input:focus{
   background:none;
   color:  #4e4999;
   width: 100%;
+  border: none;
+
+  padding: 20px;
 }
 
 /* SIDENAV */
@@ -270,7 +274,7 @@ color: black;
   /* background-color: #edeefa; */
   border-radius: 8px;
   text-align: center;
-  filter: drop-shadow(5px 5px 5px #97979730);
+  filter: drop-shadow(5px 5px 7px #9e9d9d82);
 }
 
 .apmt{
@@ -365,11 +369,27 @@ color: black;
   background-color: #ffffff;
   border-radius: 5px;
   border-style: none;
+  width: 40vw;
 }
 
+.bgdiv{
+  height: 100vh;
+  width:100vw;
+}
 .nurseimg{
   position: absolute;
   bottom: 0;
   left: 0;
   width: 30vw;
+}
+
+.BookTitle {
+  position: absolute;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  /* font-size: 40px; */
+  top:7vh;
+  right: 50vw;
+  /* left:42.5%; */
+  color: #353374;
 }

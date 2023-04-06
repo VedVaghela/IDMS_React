@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 // import {
 //   OutlinedInput,
 //   InputLabel,
@@ -14,30 +14,71 @@ import React, { useState } from "react";
 import { TextField, Autocomplete, MenuItem } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
-const names = [
-  "Cough",
-  "Fever",
-  "Pain",
-  "Headache",
-  "Vomitting",
-  "Loose Motions",
-  "Constipation",
-  "Fatigue",
-  "Weakness",
-  "Cold"
-];
+// const symptoms = [
+//   "Cough",
+//   "Fever",
+//   "Pain",
+//   "Headache",
+//   "Vomitting",
+//   "Loose Motions",
+//   "Constipation",
+//   "Fatigue",
+//   "Weakness",
+//   "Cold"
+// ];
 export default function MultiSelect() {
+
+  const [symptom,setSymptoms] = useState([])
+  
+  const [selecteds,setSelecteds] = useState([])
+
+  const token = sessionStorage.getItem("token")
+
+  useEffect(() => {
+    fetch('https://web-production-d445c.up.railway.app/appointments/symptom/', {
+      method: 'GET',
+      headers: {
+         // 'Content-type': 'application/json',
+         'Accept': 'application/json',
+         'Authorization': `Bearer ${token}`
+      },
+  
+   })
+      .then((res) => res.json())
+      .then((symp) => setSymptoms(symp))
+      .then(()=>console.log(symptom))
+     
+      .then((data)=>console.log(data))
+      .catch((err) => {
+         console.log(err.message);
+      });
+  
+      console.log(symptom)
+  
+     
+  },[])
+
+  const symptom_key = symptom.map(s => s.id)
+  const symptom_name = symptom.map(s => s.name)
+  console.log(symptom_name)
+  console.log(symptom_key);
+
+  
+  // console.log(selected)
+
+ 
+
   return(
   <Autocomplete className="AutoCompleteBox"
-      sx={{ m: 1, width: 500 }}
+      // sx={{ m: 0.3, width: 400 }}
       multiple
-      options={names}
+      options={symptom_name}
       getOptionLabel={(option) => option}
       disableCloseOnSelect
       renderInput={(params) => (
         <TextField
           {...params}
-          variant="outlined"
+          // variant="outlined"
           label="Symptoms"
           placeholder="Symptoms"
         />

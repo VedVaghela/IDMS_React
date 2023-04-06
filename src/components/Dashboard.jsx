@@ -2,8 +2,58 @@ import { SideNav } from "./SideNav"
 import dr from "../assets/dr.png"
 import { TopNav } from "./TopNav"
 import mimg from "../assets/myimg.jpg"
+import { useEffect, useState } from "react"
 
 export const Dashboard = () => {
+
+const [appointments, setAppointments] = useState([])
+
+const token = sessionStorage.getItem("token")
+
+useEffect( () => {
+    fetch('https://web-production-d445c.up.railway.app/appointments/appointment/', {
+            method: 'GET',
+            headers: {
+            //    'Content-type': 'application/json',
+               'Accept': 'application/json',
+               'Authorization': `Bearer ${token}`
+            },
+         })
+            .then((res) => res.json())
+            .then((appt)=>setAppointments(appt))
+            .then((data)=>console.log(data))
+            .catch((err) => {
+               console.log(err.message);
+            })
+        }
+    ,[])
+
+    console.log(appointments)
+    // console.log(appointments.data[0].student)
+    // const appmt_data = appointments.data;
+    // console.log(appmt_data)
+    const student_uid =  appointments && appointments.data && appointments.data.map( appmt => appmt.student)
+    console.log(student_uid)
+
+    function getApptData(id) {
+        fetch(`https://web-production-d445c.up.railway.app/users/profile/:${id}/`, {
+            method: 'GET',
+            headers: {
+            //    'Content-type': 'application/json',
+               'Accept': 'application/json',
+               'Authorization': `Bearer ${token}`
+            },
+         })
+            .then((res) => res.json())
+            .then((appt)=>setAppointments(appt))
+            .then((data)=>console.log(data))
+            .catch((err) => {
+               console.log(err.message);
+            })
+    }
+
+    
+
     return(
         <div className="mainc">
        <TopNav/>
