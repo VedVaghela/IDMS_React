@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 export const Dashboard = () => {
 
 const [appointments, setAppointments] = useState([])
+// const [appointmentList, setAppointmentList] = useState([])
 
 const token = sessionStorage.getItem("token")
 
@@ -20,40 +21,18 @@ useEffect( () => {
             },
          })
             .then((res) => res.json())
-            .then((appt)=>setAppointments(appt))
-            .then((data)=>console.log(data))
+            .then(({ data: appointmet }) => {
+                setAppointments(appointmet);
+            })
+            .then(console.log(appointments))
             .catch((err) => {
                console.log(err.message);
             })
         }
     ,[])
-
-    console.log(appointments)
-    // console.log(appointments.data[0].student)
-    // const appmt_data = appointments.data;
-    // console.log(appmt_data)
-    const student_uid =  appointments && appointments.data && appointments.data.map( appmt => appmt.student)
-    console.log(student_uid)
-
-    function getApptData(id) {
-        fetch(`https://web-production-d445c.up.railway.app/users/profile/:${id}/`, {
-            method: 'GET',
-            headers: {
-            //    'Content-type': 'application/json',
-               'Accept': 'application/json',
-               'Authorization': `Bearer ${token}`
-            },
-         })
-            .then((res) => res.json())
-            .then((appt)=>setAppointments(appt))
-            .then((data)=>console.log(data))
-            .catch((err) => {
-               console.log(err.message);
-            })
-    }
-
     
-
+    
+    
     return(
         <div className="mainc">
        <TopNav/>
@@ -83,7 +62,7 @@ useEffect( () => {
                 <div className="appointmentsbox">
                 <h3 className="todayapt">Today's Appointments</h3>
                 <hr></hr>
-                <div className="apmt">
+                {/* <div className="apmt">
                     <div className="apmt-rollno">202152343</div>
                     <div className="apmt-name">Ved Vaghela</div>
                     <div className="apmt-no">1</div>
@@ -102,7 +81,12 @@ useEffect( () => {
                 <div className="apmt-rollno">202152309</div>
                     <div className="apmt-name">Dharmik Jethva</div>
                     <div className="apmt-no">4</div>
-                </div>
+                </div> */}
+
+                <ol>
+                    {appointments.map(appt => ( <li key={appointments.student_data}>{appt.student_data.name} {appt.student_data.rollno} </li> ))}
+                </ol>
+
                 </div>
             </div>
         </div>

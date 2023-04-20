@@ -3,7 +3,7 @@ import nurseimg from "../assets/nurseimg.png"
 import React, {useState} from "react"
 // import {selected} from "./MultiSelect";
 
-export const BookAppointment = () => {
+export const BookAppointment = (props) => {
 
     const [date, setDate] = useState('')
     const [symptoms, setSymptoms] = useState([]) 
@@ -44,7 +44,7 @@ export const BookAppointment = () => {
    
        }
         
-
+       console.log(props.selected)
     
 
     return(

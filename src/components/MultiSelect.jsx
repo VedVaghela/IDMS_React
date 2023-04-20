@@ -14,18 +14,6 @@ import React, { useState, useEffect} from "react";
 import { TextField, Autocomplete, MenuItem } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
-// const symptoms = [
-//   "Cough",
-//   "Fever",
-//   "Pain",
-//   "Headache",
-//   "Vomitting",
-//   "Loose Motions",
-//   "Constipation",
-//   "Fatigue",
-//   "Weakness",
-//   "Cold"
-// ];
 export default function MultiSelect() {
 
   const [symptom,setSymptoms] = useState([])
@@ -38,7 +26,6 @@ export default function MultiSelect() {
     fetch('https://web-production-d445c.up.railway.app/appointments/symptom/', {
       method: 'GET',
       headers: {
-         // 'Content-type': 'application/json',
          'Accept': 'application/json',
          'Authorization': `Bearer ${token}`
       },
@@ -60,13 +47,13 @@ export default function MultiSelect() {
 
   const symptom_key = symptom.map(s => s.id)
   const symptom_name = symptom.map(s => s.name)
-  console.log(symptom_name)
-  console.log(symptom_key);
+  // console.log(symptom_name)
+  // console.log(symptom_key);
 
   
   // console.log(selected)
 
- 
+//  console.log(selecteds)
 
   return(
   <Autocomplete className="AutoCompleteBox"
@@ -78,6 +65,8 @@ export default function MultiSelect() {
       renderInput={(params) => (
         <TextField
           {...params}
+          value={selecteds}
+          onChange={(e) => setSelecteds(e.target.value)}
           // variant="outlined"
           label="Symptoms"
           placeholder="Symptoms"
@@ -89,7 +78,9 @@ export default function MultiSelect() {
           key={option}
           value={option}
           sx={{ justifyContent: "space-between" }}
+          
         >
+          
           {option}
           {selected ? <CheckIcon color="info" /> : null}
         </MenuItem>
