@@ -8,6 +8,10 @@ import {Dashboard} from "./components/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {historys} from './historys.js'
 import { BookAppointment } from "./components/BookAppointment";
+import {Homepage} from './components/Homepage'
+import { StudentProfile } from "./components/StudentProfile";
+import { MobDashboard } from "./components/MobDashboard";
+import { MobStudentProfile } from "./components/MobStudentProfile";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -24,7 +28,7 @@ function App() {
     // <AuthContextProvider>
     <BrowserRouter history={historys}>
     <Routes>
-      <Route path="/" element="Home">
+      <Route path="/" element={<Homepage/>}>
         
       </Route>
       <Route path="/signin" 
@@ -34,9 +38,12 @@ function App() {
       }
       </div>}>
       </Route>
-      <Route path="/Dashboard" element={<Dashboard/>}>
+      <Route path="/Dashboard" element={<MobDashboard/>}>
       </Route>
-      <Route path="/book" element={<BookAppointment/>}></Route>
+      <Route path="/book" element={<BookAppointment/>}>
+      </Route>
+      <Route path="/studentprofile" element={<MobStudentProfile/>}>
+      </Route>
     </Routes>
     </BrowserRouter>
     // </AuthContextProvider>

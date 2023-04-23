@@ -5,7 +5,7 @@ import mimg from "../assets/myimg.jpg"
 import { useEffect, useState } from "react"
 import './Dashboard.css'
 
-export const Dashboard = () => {
+export const MobDashboard = () => {
 
 const [appointments, setAppointments] = useState([])
 // const [appointmentList, setAppointmentList] = useState([])
@@ -43,13 +43,17 @@ useEffect( () => {
        {/* {window.innerWidth - 600 < 0 ? ("") : (<SideNav/>)} */}
         <div className="dashboard-container">
             <img className="dbimg" src = {dr} />
-            
+            <div className='Welcometitle'>Good Afternoon </div>  
             <div className="container1">
+             
                 <div className="profile">
                     <h5 className="upapt">Upcoming Appointment</h5>
-                    <hr></hr>
-                    <div className="nadetail">
-                        <p>202152343 | Ved Vaghela</p>
+
+                    <p>Friday</p><br></br>
+                    <h4>11th Sept</h4>
+                 
+                    {/* <div className="nadetail">
+                        <p>202152343 | Ved Vaghela</p> */}
                         {/* <div className="symptoms">
                             Symptoms
                            <ol>
@@ -58,7 +62,7 @@ useEffect( () => {
                             {appointments.map(appt => <li>{appt.symptoms}</li>)}
                            </ol>
                         </div> */}
-                    </div>
+                    {/* </div> */}
                     {/* <div className="cardimg">
                         <img className="imgincard"src={mimg}/>
                     </div> */}
@@ -68,25 +72,47 @@ useEffect( () => {
                 </div>
                 <div className="appointmentsbox">
                 <h3 className="todayapt">Today's Appointments</h3>
-                <hr></hr>
+                {/* <hr></hr> */}
                 <div className="apmt">
+                <div className="apmt-name">Ved Vaghela</div>
                     <div className="apmt-rollno">202152343</div>
-                    <div className="apmt-name">Ved Vaghela</div>
+                   
                     {/* <div className="apmt-no">1</div> */}
                 </div>
                 <div className="apmt">
+                <div className="apmt-name">Krish Patel</div>
                 <div className="apmt-rollno">202152318</div>
-                    <div className="apmt-name">Krish Patel</div>
+                    
                     {/* <div className="apmt-no">2</div> */}
                 </div>
                 <div className="apmt">
+                <div className="apmt-name">Deepak Gohil</div>
                 <div className="apmt-rollno">202152311</div>
-                    <div className="apmt-name">Deepak Gohil</div>
+                    
                     {/* <div className="apmt-no">3</div> */}
                 </div>
                 <div className="apmt">
+                <div className="apmt-name">Dharmik Jethva</div>
                 <div className="apmt-rollno">202152309</div>
-                    <div className="apmt-name">Dharmik Jethva</div>
+                    
+                    {/* <div className="apmt-no">4</div> */}
+                </div>
+                <div className="apmt">
+                <div className="apmt-name">Dharmik Jethva</div>
+                <div className="apmt-rollno">202152309</div>
+                    
+                    {/* <div className="apmt-no">4</div> */}
+                </div>
+                <div className="apmt">
+                <div className="apmt-name">Dharmik Jethva</div>
+                <div className="apmt-rollno">202152309</div>
+                    
+                    {/* <div className="apmt-no">4</div> */}
+                </div>
+                <div className="apmt">
+                <div className="apmt-name">Dharmik Jethva</div>
+                <div className="apmt-rollno">202152309</div>
+                    
                     {/* <div className="apmt-no">4</div> */}
                 </div>
 

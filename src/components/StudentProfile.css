@@ -1,0 +1,140 @@
+.bgcontainer{
+    height: 100%;
+  width:100%;
+  position:absolute;
+  background-color: #edeefa;
+  }
+  
+  .mainc-profile{
+  height: 90%;
+  width:80%;
+  position:absolute;
+  top:10%;
+  left:17%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  /* border-color: #353374; */
+  /* border-style: solid; */
+  }
+  
+  .profilebox{
+    background-color: #ffffff;
+    height: 30vh;
+    width: 32vw;
+    border-radius: 8px;
+    filter: drop-shadow(5px 5px 5px #97979730);
+  }
+  
+  .prescription-box{
+    background-color: #ffffff;
+    height: 50vh;
+    width:80vw;
+    border-radius: 8px;
+    filter: drop-shadow(5px 5px 5px #97979730);
+  }
+  
+  .student-title {
+     position: absolute;
+     top: 2vh;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 800;
+     /* font-size: 40px; */
+     left:18vw;
+     color: #353374;
+  }
+  
+  .box-title{
+    font-family: 'Raleway', sans-serif;
+     font-weight: 500;
+     margin: 12px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+
+    .bgcontainer{
+      height: 100%;
+      width:100%;
+      position:absolute;
+      background-color: #ffffff;
+      }
+      
+      .mainc-profile{
+      height: 90%;
+      width:90%;
+      position:absolute;
+      top:10%;
+      left: 5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      /* background-color: #353374; */
+      /* border-color: #353374; */
+      /* border-style: solid; */
+      }
+      
+      .profilebox{
+        background-color: #ffffff;
+        height: 25vh;
+        width: 32vw;
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        /* filter: drop-shadow(15px 15px 5px #97979730); */
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+      }
+
+      #studentbox{
+        width:96%;
+      }
+
+      #box2{
+        display: none;
+      }
+      
+      .prescription-box{
+        background-color: #ffffff;
+        height: 55vh;
+        width:96%;
+        border-radius: 8px;
+        padding-top: 10px;
+        /* filter: drop-shadow(5px 5px 5px #97979730); */
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+      }
+
+      .apmt{
+        /* background-color: #edeefa;
+        background-color: #ffffff; */
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 90%;
+        height: 12vh;
+        margin: 5px;
+        padding: 15px;
+        /* padding-right: 8px; */
+        border-radius: 13px;
+        background-color: #6B4EFF;
+        color: #ffffff;
+      }
+      
+      .student-title {
+         position: absolute;
+         top: 2vh;
+         font-family: 'Raleway', sans-serif;
+         font-weight: 800;
+         /* font-size: 40px; */
+         left:18vw;
+         color: #353374;
+      }
+      
+      .box-title{
+        font-family: 'Raleway', sans-serif;
+         font-weight: 500;
+         margin: 12px;
+      }
+  }

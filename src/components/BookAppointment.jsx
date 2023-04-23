@@ -1,24 +1,49 @@
-import MultiSelect from "./MultiSelect"
+// import MultiSelect from "./MultiSelect"
 import nurseimg from "../assets/nurseimg.png"
-import React, {useState} from "react"
-// import {selected} from "./MultiSelect";
+import React, {useState, useEffect} from "react"
+// import MultiSelection from "./MultiSelection"
+import { MultiSelect } from 'primereact/multiselect';
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
+    
+//core
+import "primereact/resources/primereact.min.css"; 
 
-export const BookAppointment = (props) => {
+
+ 
+
+export const BookAppointment = () => {
 
     const [date, setDate] = useState('')
     const [symptoms, setSymptoms] = useState([]) 
     const [otherSymptoms, setOtherSymptoms] = useState('')
+    const [selectedSymptoms, setSelectedSymptoms] = useState(null);
+    const [selected_id, setSelected_id] = useState([])
 
     const token = sessionStorage.getItem("token")
 
-    const handleBook = (e) => {
-        e.preventDefault();
+      useEffect(() => {
+        fetch('https://web-production-d445c.up.railway.app/appointments/symptom/', {
+          method: 'GET',
+          headers: {
+             'Accept': 'application/json',
+             'Authorization': `Bearer ${token}`
+          },
+      
+       })
+          .then((res) => res.json())
+          .then((symp) => setSymptoms(symp))
+          .catch((err) => {
+             console.log(err.message);
+          });
+      },[])
+          
 
-        // setSymptoms({selected})
+      const handleBook = (e) => {
+        e.preventDefault();
 
         let data = {
          "date" : date,
-         "symptoms" : symptoms,
+         "symptoms" : selected_id,
          "extra_symptoms" : otherSymptoms
         }
 
@@ -40,13 +65,13 @@ export const BookAppointment = (props) => {
                setDate('');
                setSymptoms([]);
                setOtherSymptoms('');
-              
    
        }
-        
-       console.log(props.selected)
-    
 
+       console.log(selected_id);
+       console.log(selectedSymptoms);
+       console.log(date);
+       
     return(
         <>
         <div className="bgdiv">
@@ -56,7 +81,18 @@ export const BookAppointment = (props) => {
                     <label>Date</label>
                     <input type="date" value={date} onChange={(e) => setDate(e.target.value)} name="date" id="date" />
                     <label>Symptoms</label>
-                    <MultiSelect />
+                    
+                    {/* <MultiSelect /> */}
+                    <div className="card flex justify-content-center">
+                    <MultiSelect value={selectedSymptoms}
+                    onChange={(e) => {setSelectedSymptoms(e.value)
+                    
+                    e.value.map(s => console.log(s.id));
+                    setSelected_id(e.value.map(s => s.id))
+                    }} 
+                    options={symptoms} optionLabel="name" display="chip" 
+                    placeholder="Select Symptoms" maxSelectedLabels={10} className="w-full md:w-20rem" />
+                    </div>
                     <label>Other</label>
                     <input type="text" value={otherSymptoms} onChange={(e) => setOtherSymptoms(e.target.value)} name="otherSymptoms" id="otherSymptoms"/>
                 </div>
@@ -67,3 +103,4 @@ export const BookAppointment = (props) => {
         </>
     )
 }
+
