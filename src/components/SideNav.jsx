@@ -20,10 +20,9 @@ export const SideNav = () => {
     // </Navbar>
     
         <div className='nav'>
-            <a className="navop" href="#section">Appointments</a>
-            <a className="navop" href="#section">Profile</a>
-            <a className="navop" href="#section">Prescriptions</a>
-            <a className="navop" href="#section">Notice</a>
+            <a className="navop" href="#section"><i class="fa-regular fa-calendar-check fa-2xl"></i></a>
+            <a className="navop" href="#section"><i class="fa-regular fa-user fa-2xl"></i></a>
+            <a className="navop" href="#section"><i class="fa-regular fa-bell fa-2xl"></i></a>
         </div>
         
     )

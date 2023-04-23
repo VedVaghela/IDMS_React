@@ -274,6 +274,7 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         text-align: left;
         background-color: transparent;
         font-weight: 600;
+        margin-bottom: 15px;
       }
       .apmt{
         /* background-color: #edeefa;
