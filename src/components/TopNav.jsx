@@ -17,7 +17,7 @@ import bbi from '../assets/bbi.png'
 export const TopNav = () => {
     return(
         <div className='tnav'>
-            <img src={bbi} className='bicon'/>
+            {/* <img src={bbi} className='bicon'/> */}
         {/* <svg src={backicon} className='backicon'></svg> */}
         {/* <div className='Welcometitle'>Welcome Dr. Strange </div>     */}
         </div>

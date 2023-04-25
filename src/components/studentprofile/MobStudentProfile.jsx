@@ -1,12 +1,38 @@
+import React, {useState, useEffect} from "react";
 import { SideNav } from "../SideNav"
 import { TopNav } from "../TopNav"
 import './StudentProfile.css'
+import { Link } from "react-router-dom";
 
 export const MobStudentProfile = () => {
+    
+    const token = sessionStorage.getItem("token")
+    console.log(token);
+    let uid = sessionStorage.getItem("id")
+    console.log(uid);
+    uid = uid - 2
+    console.log(uid);
+    useEffect(() => {
+        fetch(`https://it262-proj-44tb.onrender.com/users/profile/${uid}`, {
+          method: 'GET',
+          headers: {
+             'Accept': 'application/json',
+             'Content-Type': 'application/json',
+             'Authorization': `Bearer ${token}`
+          },
+      
+       })
+          .then((res) => res.json())
+          .catch((err) => {
+             console.log(err.message);
+          });
+      },[])
+          
+
     return(
         <div className="bgcontainer">
              <SideNav/>
-             <TopNav/>
+             {/* <TopNav/> */}
             <h2 className="student-title">Your Profile</h2>
         <div className="mainc-profile">
            
@@ -23,15 +49,15 @@ export const MobStudentProfile = () => {
             <div className="plistbox">
             <div className="p-apmt">
             <div className="apmt-name">20-4-2023</div>
-            <i class="fa-solid fa-caret-right fa-2xl"></i>
+            <Link to="/prescription"><i className="fa-solid fa-caret-right fa-2xl pres"></i></Link>
             </div>
             <div className="p-apmt">
             <div className="apmt-name">20-4-2023</div>
-            <i class="fa-solid fa-caret-right fa-2xl"></i>
+            <Link to="/prescription"><i className="fa-solid fa-caret-right fa-2xl"></i></Link>
             </div>
             <div className="p-apmt">
             <div className="apmt-name">20-4-2023</div>
-            <i class="fa-solid fa-caret-right fa-2xl"></i>
+            <Link to="/prescription"><i className="fa-solid fa-caret-right fa-2xl pres"></i></Link>
             </div>
             </div>
             </div>

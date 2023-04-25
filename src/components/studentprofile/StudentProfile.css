@@ -135,17 +135,23 @@
 
       .student-title {
          position: absolute;
-         top: 7vh;
+         top: 5vh;
          font-family: 'Raleway', sans-serif;
          font-weight: 800;
          /* font-size: 40px; */
          left:10vw;
          color: #6B4EFF;
+         font-size: 30px;
       }
       
       .box-title{
         font-family: 'Raleway', sans-serif;
          font-weight: 500;
          margin: 12px;
+      }
+      
+      a:after, a:link, a:active, a:visited, a:hover{
+        text-decoration: none;
+        color: #ffffff;
       }
   }

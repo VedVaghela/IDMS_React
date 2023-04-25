@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import drimg from '../../assets/drimg.png';
 // import AuthContext from "./AuthContext";
 // import { useContext } from "react";
@@ -43,13 +44,14 @@ export const MobLogin = (props) => {
         console.log(response)
         //set JWT token to local
         sessionStorage.setItem("token", token);
+        sessionStorage.setItem("id",response.data.data.user_id)
         console.log(token)
-        console.log(email)
+        console.log(response.data.data.user_id)
         //set token to axios common header
         setAuthToken(token);
-        
+        console.log(response.data.data)
         //redirect user to home page
-        if(response.data.is_doctor){
+        if(response.data.data.is_doctor){
           window.location.href = '/dashboard'
         }else{
           window.location.href = '/studentprofile'
