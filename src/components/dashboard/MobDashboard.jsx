@@ -33,11 +33,11 @@ export const MobDashboard = () => {
   console.log(appointments);
 
   let rawdate = new Date()
-  let year = rawdate.getFullYear();
   let month = rawdate.getMonth();
   let date = rawdate.getDate();
 
   const months = [0, "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  const Day = [0,"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"]
   console.log(date);
 
   // let present_app_symp = appointments[0]?.symptoms
@@ -56,7 +56,7 @@ export const MobDashboard = () => {
           <div className="profile">
             <h5 className="upapt">Upcoming Appointment</h5>
 
-            <p>Friday</p>
+            <p>{Day[rawdate.getDay()]}</p>
             <br></br>
             <h4>{date} {months[month]}</h4>
 
@@ -79,7 +79,7 @@ export const MobDashboard = () => {
           <div className="appointmentsbox">
             <h3 className="todayapt">Today's Appointments</h3>
             {/* <hr></hr> */}
-
+            <div className="listbox">
             <ol className="custom-counter">
               {appointments.map((appt) => (
                 <li className="apmt" key={appointments.student_data}>
@@ -90,6 +90,7 @@ export const MobDashboard = () => {
                 </li>
               ))}
             </ol>
+            </div>
           </div>
         </div>
       </div>

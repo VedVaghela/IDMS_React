@@ -1,8 +1,9 @@
 .bgcontainer{
-    height: 100%;
-  width:100%;
+  max-height: 100vh;
+  max-width:100vw;
   position:absolute;
   background-color: #edeefa;
+  overflow: hidden;
   }
   
   .mainc-profile{
@@ -62,7 +63,7 @@
       }
       
       .mainc-profile{
-      height: 90%;
+      height: 85%;
       width:90%;
       position:absolute;
       top:10%;
@@ -99,7 +100,7 @@
       
       .prescription-box{
         background-color: #ffffff;
-        height: 65vh;
+        height: 60vh;
         width:96%;
         border-radius: 8px;
         padding-top: 10px;
