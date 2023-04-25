@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import drimg from '../assets/drimg.png';
+import drimg from '../../assets/drimg.png';
 // import AuthContext from "./AuthContext";
 // import { useContext } from "react";
 import axios from "axios";
-import { setAuthToken } from "../helpers/setAuthToken";
+import { setAuthToken } from "../../helpers/setAuthToken";
 
 export const Login = (props) => {
     const [email, setEmail] = useState('');

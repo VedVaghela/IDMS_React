@@ -1,5 +1,5 @@
-import { SideNav } from "./SideNav"
-import { TopNav } from "./TopNav"
+import { SideNav } from "../SideNav"
+import { TopNav } from "../TopNav"
 import './StudentProfile.css'
 
 export const MobStudentProfile = () => {

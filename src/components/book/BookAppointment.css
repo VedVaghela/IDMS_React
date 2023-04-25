@@ -1,0 +1,164 @@
+/* booking box */
+.bookingBox{
+    position: absolute;
+    right:10vw;
+    top:20vh;
+    width: 65vw;
+    height: 50vh;
+    background-color: #b3b4ee;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1;
+    filter: drop-shadow(-12px 10px 10px rgba(0, 0, 0, 0.194));
+  }
+  
+  
+  .dateSelect {
+    width: 30%;
+  }
+  
+  .bookbtn{
+    position: absolute;
+    right: 15vw;
+    bottom:20vh;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5px;
+    background-color: #4e4999;
+    color: #ffffff;
+    border-style: none;
+  }
+  
+  .AutoCompleteBox{
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-style: none;
+    width: 40vw;
+  }
+  
+  .bgdiv{
+    height: 100vh;
+    width:100vw;
+  }
+  .nurseimg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30vw;
+  }
+  
+  .BookTitle {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    /* font-size: 40px; */
+    top:7vh;
+    right: 50vw;
+    /* left:42.5%; */
+    color: #353374;
+  }
+
+  @media only screen and (max-width: 600px) {
+   
+  .bookingBox{
+    position: absolute;
+    right:0vw;
+    top:25vh;
+    width: 100vw;
+    height: 80vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    z-index: 1;
+    filter: drop-shadow(-12px 10px 10px rgba(0, 0, 0, 0.194));
+  }
+  
+  
+  .dateSelect {
+    width: 100%;
+    
+  }
+
+  .select-option{
+    color: #6B4EFF;
+    font-size: 2.5vh;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  .otherRemarks{
+    background-color: transparent;
+     /* outline: 1; */
+    /* border-width: 0 0 2px; */
+    /* border-color: blue;  */
+    border:none;
+    border-bottom: 3px solid #6B4EFF;
+    border-radius:0;
+    padding: 5px 10px;
+    outline: none;
+  }
+
+  .bookbtn{
+    position: absolute;
+    right: 5vw;
+    bottom:12vh;
+    width: 90vw;
+    height: 5vh;
+    border-radius: 5px;
+    background-color: #6B4EFF;
+    color: #ffffff;
+    border-style: none;
+    z-index: 2;
+  }
+  
+  .AutoCompleteBox{
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-style: none;
+    width: 40vw;
+  }
+  
+  .bgdiv{
+    position: absolute;
+    max-height: 100%;
+    max-width:100%;
+    background-color: #6B4EFF;
+    margin: 0;
+    padding: 0;
+    right:0;
+    overflow: hidden;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* flex-direction: column */
+    /* align-items: center; */
+  }
+
+  .book-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nurseimg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30vw;
+    display: none;
+  }
+  
+  .BookTitle {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 35px;
+    width: 100%;
+    /* font-size: 40px; */
+    top:7vh;
+    left:10%;
+    color: #ffffff;
+  }
+  }

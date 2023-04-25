@@ -28,11 +28,11 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    top:5%;
+    justify-content: space-between;
+    top:10%;
     /* bottom:5vh; */
     flex-direction:column;
-    height: 75%;
+    height: 85%;
     width: 70%;
     left:30%;
     background-color: transparent;
@@ -43,7 +43,7 @@
   .profile {
     /* position: absolute; */
     /* top:10vh; */
-    height: 25vh;
+    height: 35vh;
     width: 32vw;
     /* background-color: #9AE06F; */
     /* background-color: #edeefa; */
@@ -57,7 +57,7 @@
   
   .databox {
     /* position: absolute; */
-    height: 50vh;
+    height: 45vh;
     width: 32vw;
     /* background-color:#E6E6E6; */
     /* background-color: #edeefa; */

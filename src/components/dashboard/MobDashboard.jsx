@@ -1,7 +1,7 @@
-import { SideNav } from "./SideNav"
-import dr from "../assets/dr.png"
-import { TopNav } from "./TopNav"
-import mimg from "../assets/myimg.jpg"
+import { SideNav } from "../SideNav"
+import dr from "../../assets/dr.png"
+import { TopNav } from "../TopNav"
+// import mimg from "../assets/myimg.jpg"
 import { useEffect, useState } from "react"
 import './Dashboard.css'
 

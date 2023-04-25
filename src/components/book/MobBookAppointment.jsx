@@ -1,14 +1,14 @@
 // import MultiSelect from "./MultiSelect"
-import nurseimg from "../assets/nurseimg.png"
+import nurseimg from "../../assets/nurseimg.png"
 import React, {useState, useEffect} from "react"
 // import MultiSelection from "./MultiSelection"
 import { MultiSelect } from 'primereact/multiselect';
 import "primereact/resources/themes/lara-light-indigo/theme.css";     
-    
+ import './BookAppointment.css'   
 //core
 import "primereact/resources/primereact.min.css"; 
-
-
+import { SideNav } from "../SideNav";
+import DatePicker from "react-horizontal-datepicker";
  
 
 export const MobBookAppointment = () => {
@@ -71,19 +71,31 @@ export const MobBookAppointment = () => {
        console.log(selected_id);
        console.log(selectedSymptoms);
        console.log(date);
-       
+       const selectedDay = (val) => {
+         console.log(val);
+       };
+
     return(
-        <>
         <div className="bgdiv">
-            <h2 className="BookTitle">Book Your Appointment</h2>
+        <SideNav/>
+        <div className="book-container">
+            <div className="BookTitle">Book Your Appointment</div>
             <div className="bookingBox">
                 <div className="dateSelect">
-                    <label>Date</label>
-                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} name="date" id="date" />
-                    <label>Symptoms</label>
+                    <label className="select-option">Select Date</label>
+                    <DatePicker
+                     getSelectedDay={selectedDay}
+                     endDate={30}
+                     // endDate={20}
+                     // labelFormat={"MMMM"}
+                     color={"#6B4EFF"}
+                    />
+                    <br></br>
+                    {/* <input type="date" value={date} onChange={(e) => setDate(e.target.value)} name="date" id="date" /> */}
+                    {/* <label>Symptoms</label> */}
                     
                     {/* <MultiSelect /> */}
-                    <div className="card flex justify-content-center">
+                    {/* <div className="card flex justify-content-center">
                     <MultiSelect value={selectedSymptoms}
                     onChange={(e) => {setSelectedSymptoms(e.value)
                     
@@ -92,15 +104,15 @@ export const MobBookAppointment = () => {
                     }} 
                     options={symptoms} optionLabel="name" display="chip" 
                     placeholder="Select Symptoms" maxSelectedLabels={10} className="w-full md:w-20rem" />
-                    </div>
-                    <label>Other</label>
-                    <input type="text" value={otherSymptoms} onChange={(e) => setOtherSymptoms(e.target.value)} name="otherSymptoms" id="otherSymptoms"/>
+                    </div> */}
+                    <label className="select-option">Other</label>
+                    <input type="text" className="otherRemarks" value={otherSymptoms} onChange={(e) => setOtherSymptoms(e.target.value)} name="otherSymptoms" id="otherSymptoms"/>
                 </div>
             </div>
             <button className="bookbtn" onClick={handleBook}>Book</button>
             <img src={nurseimg} className="nurseimg" alt="nurseimage"/>
         </div>
-        </>
+        </div>
     )
 }
 

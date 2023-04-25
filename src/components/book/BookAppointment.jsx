@@ -1,5 +1,5 @@
 // import MultiSelect from "./MultiSelect"
-import nurseimg from "../assets/nurseimg.png"
+import nurseimg from "../../assets/nurseimg.png"
 import React, {useState, useEffect} from "react"
 // import MultiSelection from "./MultiSelection"
 import { MultiSelect } from 'primereact/multiselect';

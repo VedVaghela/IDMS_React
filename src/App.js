@@ -2,16 +2,17 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, {useState} from 'react';
 import './App.css';
-import {Login} from "./components/Login";
-import {Register} from "./components/Register";
-import {Dashboard} from "./components/Dashboard";
+import {Login} from "./components/signin/Login";
+import {Register} from "./components/signin/Register";
+import {Dashboard} from "./components/dashboard/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {historys} from './historys.js'
-import { BookAppointment } from "./components/BookAppointment";
+import { BookAppointment } from "./components/book/BookAppointment";
 import {Homepage} from './components/Homepage'
-import { StudentProfile } from "./components/StudentProfile";
-import { MobDashboard } from "./components/MobDashboard";
-import { MobStudentProfile } from "./components/MobStudentProfile";
+import { StudentProfile } from "./components/studentprofile/StudentProfile";
+import { MobDashboard } from "./components/dashboard/MobDashboard";
+import { MobStudentProfile } from "./components/studentprofile/MobStudentProfile";
+import { MobBookAppointment } from "./components/book/MobBookAppointment";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -38,11 +39,12 @@ function App() {
       }
       </div>}>
       </Route>
-      <Route path="/Dashboard" element={<MobDashboard/>}>
+      {/* <Route path="/Dashboard" element={<Dashboard/>}>
+      </Route> */}
+      <Route path="/dashboard" element={window.innerWidth - 600 < 0 ? (<MobDashboard/>) : (<Dashboard/>)}/>
+      <Route path="/book" element={window.innerWidth - 600 < 0 ? (<MobBookAppointment/>) : (<BookAppointment/>)}>
       </Route>
-      <Route path="/book" element={<BookAppointment/>}>
-      </Route>
-      <Route path="/studentprofile" element={<MobStudentProfile/>}>
+      <Route path="/studentprofile" element={window.innerWidth - 600 < 0 ? (<MobStudentProfile/>) : (<StudentProfile/>)}>
       </Route>
     </Routes>
     </BrowserRouter>

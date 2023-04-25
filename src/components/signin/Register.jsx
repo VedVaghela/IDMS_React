@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import drimg from '../assets/drimg.png';
+import drimg from '../../assets/drimg.png';
 // import { renderHook } from "@testing-library/react";
 
 export const Register = (props) => {
