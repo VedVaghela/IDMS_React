@@ -280,8 +280,8 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         /* background-color: #edeefa;
         background-color: #ffffff; */
         display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
+        justify-content: space-between;
+        flex-direction: row;
         width: 100%;
         height: 12vh;
         margin: 5px;
@@ -291,7 +291,9 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         background-color: #6B4EFF;
         color: #ffffff;
       }
-      
+      .apmt-details{
+        width: 80%;
+      }
       .apmt-rollno{
         width: 20%;
         height: auto;
@@ -343,9 +345,13 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         counter-reset: step-counter;
         padding: 0rem;
         margin: 0rem;
+        width: 100%;
       }
       
-      .custom-counter li::before {
+      .custom-counter li::before{
+        display:none;
+      }
+      .custom-counter li::after {
         counter-increment: step-counter;
         content: counter(step-counter);
         /* margin-right: 10px;
@@ -359,8 +365,8 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         justify-content: center;
         font-size:10px;
         /* background-color:#d7385d00; */
-        border-color: #000000;
-        color: #000000;
+        border-color: #ffffff;
+        color: #ffffff;
         border-style: solid;
         border-radius:50%;
       }

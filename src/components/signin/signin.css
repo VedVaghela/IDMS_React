@@ -1,0 +1,315 @@
+
+.mainclass{
+    /* background-color: #f0fff0; */
+    height: 100vh;
+    background: #b3b4ee;
+    /* background: rgb(53,167,200); */
+    /* background: linear-gradient(90deg, rgba(55, 195, 234, 0.5) 0%, rgba(177, 224, 228, 0.6) 60%,rgba(215, 238, 246, 0.868)) 100%; */
+  /* background: linear-gradient(90deg, rgba(53,167,200,0.5) 0%, rgba(89,209,184,0.5) 40%, rgba(178,223,155,0.5) 100%); */
+    width: 100%;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; */
+    justify-content: center;
+  }
+  
+  .imgbox {
+    /* background-color: #f0feff; */
+    background-color: #b3b4ee;
+    width:50%;
+    display: flex;
+  }
+  
+  .docimg {
+    position: absolute;
+    left:0;
+    bottom:0;
+    /* width:50%; */
+    height: 80%;
+  }
+  
+  .maincontainer {
+    background-color: #edeefa;
+    border-radius: 20px 0px 0px 20px;
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  }
+  
+  .pagetitle {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    top:5%;
+    /* left:42.5%; */
+    color: #353374;
+  }
+  
+  .auth-form-container{
+    margin-top: 10vh;
+    position: absolute;
+    /* right:20%; */
+    display: flex;
+    /* background-color: rgb(19, 115, 75); */
+    /* border: rgb(19, 115, 75); */
+    border:#4e4999;
+    border-style: solid;
+    padding: 20px 20px;
+    /* height: 70vh; */
+    width: 40%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+   .LoginForm, .RegisterForm {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  label {
+    color: #4e4999;
+    text-align: left;
+    padding: 0.25rem 0;
+    font-size: 15px;
+  }
+  
+  input {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border:none;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  input:focus{
+    outline: none;
+  }
+  
+  /* button {
+    border:none;
+    color: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    /* background-color: rgb(19, 115, 75); */
+    /* background-color:  #C6FF7D; */
+  /* } */
+  
+  
+  .name {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+  }
+  
+  .firstname{
+    margin-right: 10px;
+    width: 50%;
+  }
+  .lastname{
+    margin-left: 10px;
+    width: 50%;
+  }
+  
+  .loginButton{
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 10px;
+    background-color:  #4e4999;
+  }
+  
+  .registerButton{
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 10px;
+    background-color:  #4e4999;
+  }
+  
+  .linkbutton {
+    background:none;
+    color:  #4e4999;
+    width: 100%;
+    border: none;
+    border-color: transparent;
+    outline: transparent;
+    padding: 20px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    
+.mainclass{
+    /* background-color: #f0fff0; */
+    height: 100vh;
+    background: #6B4EFF;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imgbox {
+    /* background-color: #f0feff; */
+    background-color: #b3b4ee;
+    width:50%;
+    display: none;
+  }
+  
+  .docimg {
+    position: absolute;
+    left:0;
+    bottom:0;
+    /* width:50%; */
+    height: 80%;
+  }
+  
+  .maincontainer {
+    /* position: absolute;
+    bottom:0; */
+    background-color: #6B4EFF;
+    /* border-radius: 20px 20px 0px 0px; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding: 0;
+  }
+  
+  .pagetitle {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    top:5%;
+    /* left:42.5%; */
+    color: #ffffff;
+  }
+  
+  .auth-form-container{
+    position: absolute;
+    bottom:0;
+    background-color: #ffffff;
+    display: flex;
+    padding-top: 60px;
+    height: 75vh;
+    width: 100vw;
+    border-radius: 20px 20px 0px 0px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-style: none;
+  }
+   .LoginForm, .RegisterForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  label {
+    color: #6B4EFF;
+    font-family: 'Raleway', sans-serif;
+    /* padding: 0.25rem 0; */
+    font-size: 17px;
+    /* margin-top: 2rem; */
+  }
+  
+  input {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    /* border:solid; */
+    /* border-width: 2px 2px 2px 2px;
+    border-color: #6B4EFF; */
+    border-radius: 10px;
+    background-color: #5e5ebd1d;
+    width: 100%;
+    color: #000000;
+  }
+  
+  input:focus{
+    outline: none;
+  }
+
+  .inputs{
+    margin-bottom: 15px;
+  }
+
+  .labels{
+    text-align: left;
+  }
+  
+  /* button {
+    border:none;
+    color: white;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+    /* background-color: rgb(19, 115, 75); */
+    /* background-color:  #C6FF7D; */
+  /* } */
+  
+  
+  .name {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+  }
+  
+  .firstname{
+    margin-right: 10px;
+    width: 50%;
+  }
+  .lastname{
+    margin-left: 10px;
+    width: 50%;
+  }
+  
+  .loginButton{
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 10px;
+    border-style: none;
+    background-color:  #6B4EFF;
+  }
+  
+  .registerButton{
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 10px;
+    background-color:  #6B4EFF;
+    border-style: none;
+  }
+  
+  .linkbutton {
+    position: absolute;
+    background:none;
+    color:  #6B4EFF;
+    width: 100%;
+    border: none;
+    border-color: transparent;
+    outline: transparent;
+    padding: 20px;
+    bottom:4vh;
+  }
+  
+  }

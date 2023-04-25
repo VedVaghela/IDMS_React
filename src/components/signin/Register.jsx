@@ -1,3 +1,4 @@
+import './signin.css'
 import React, {useState} from "react"
 import drimg from '../../assets/drimg.png';
 // import { renderHook } from "@testing-library/react";
@@ -49,7 +50,7 @@ export const Register = (props) => {
          "phone":phone
         }
         
-        fetch('https://web-production-d445c.up.railway.app/users/register/', {
+        fetch('https://it262-proj-44tb.onrender.com/users/register/', {
          method: 'POST',
          body: JSON.stringify(data),
          headers: {
@@ -92,21 +93,21 @@ export const Register = (props) => {
             <div className="name">
             <div className="firstname">
             <label htmlFor="FirstName">First name</label>
-            <input value={fname} onChange={(e) => setFirstName(e.target.value)} name="fname" id="fname" />
+            <input className="inputs" value={fname} onChange={(e) => setFirstName(e.target.value)} name="fname" id="fname" />
             </div>
             <div className="lastname">
             <label htmlFor="LastName">Last name</label>
-            <input value={lname} onChange={(e) => setLastName(e.target.value)} name="lname" id="lname" />
+            <input className="inputs" value={lname} onChange={(e) => setLastName(e.target.value)} name="lname" id="lname" />
             </div>
             </div>
             {/* <label htmlFor="rollno">Student ID</label>
             <input value={rollno} onChange={(e) => setRollno(e.target.value)} type="number" name="rollno" id="rollno" /> */}
             <label htmlFor="email"> Email</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" />
+            <input className="inputs" value={email} onChange={(e) => setEmail(e.target.value)} type="email" id="email" name="email" />
             <label htmlFor="phone"> Phone no</label>
-            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id="phone" name="phone" />
+            <input className="inputs"value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id="phone" name="phone" />
             <label htmlFor="password"> Password </label>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
+            <input className="inputs" value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" />
             <button className="registerButton" type="submit"> Register</button>
         </form>
         <button className="linkbutton"onClick={() => props.onFormSwitch('Login')}>Already have an account? Login Here</button>

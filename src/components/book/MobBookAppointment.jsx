@@ -22,7 +22,7 @@ export const MobBookAppointment = () => {
     const token = sessionStorage.getItem("token")
 
       useEffect(() => {
-        fetch('https://web-production-d445c.up.railway.app/appointments/symptom/', {
+        fetch('https://it262-proj-44tb.onrender.com/appointments/symptom/', {
           method: 'GET',
           headers: {
              'Accept': 'application/json',
@@ -47,7 +47,7 @@ export const MobBookAppointment = () => {
          "extra_symptoms" : otherSymptoms
         }
 
-        fetch('https://web-production-d445c.up.railway.app/appointments/appointment/', {
+        fetch('https://it262-proj-44tb.onrender.com/appointments/appointment/', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -63,7 +63,7 @@ export const MobBookAppointment = () => {
             });
    
                setDate('');
-               setSymptoms([]);
+               // setSymptoms(null);
                setOtherSymptoms('');
    
        }
@@ -72,7 +72,10 @@ export const MobBookAppointment = () => {
        console.log(selectedSymptoms);
        console.log(date);
        const selectedDay = (val) => {
-         console.log(val);
+         let selected_date_raw = new Date(val)
+         let selected_date = `${selected_date_raw.getFullYear()}-${selected_date_raw.getMonth()}-${selected_date_raw.getDate()}`
+         setDate(selected_date)
+         console.log(selected_date);
        };
 
     return(
@@ -92,10 +95,10 @@ export const MobBookAppointment = () => {
                     />
                     <br></br>
                     {/* <input type="date" value={date} onChange={(e) => setDate(e.target.value)} name="date" id="date" /> */}
-                    {/* <label>Symptoms</label> */}
+                    <label className="select-option">Symptoms</label>
                     
                     {/* <MultiSelect /> */}
-                    {/* <div className="card flex justify-content-center">
+                    <div className="card flex justify-content-center">
                     <MultiSelect value={selectedSymptoms}
                     onChange={(e) => {setSelectedSymptoms(e.value)
                     
@@ -104,7 +107,8 @@ export const MobBookAppointment = () => {
                     }} 
                     options={symptoms} optionLabel="name" display="chip" 
                     placeholder="Select Symptoms" maxSelectedLabels={10} className="w-full md:w-20rem" />
-                    </div> */}
+                    </div>
+                    <br></br>
                     <label className="select-option">Other</label>
                     <input type="text" className="otherRemarks" value={otherSymptoms} onChange={(e) => setOtherSymptoms(e.target.value)} name="otherSymptoms" id="otherSymptoms"/>
                 </div>

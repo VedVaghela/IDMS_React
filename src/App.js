@@ -13,6 +13,7 @@ import { StudentProfile } from "./components/studentprofile/StudentProfile";
 import { MobDashboard } from "./components/dashboard/MobDashboard";
 import { MobStudentProfile } from "./components/studentprofile/MobStudentProfile";
 import { MobBookAppointment } from "./components/book/MobBookAppointment";
+import { MobLogin } from "./components/signin/MobLogin";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -35,7 +36,7 @@ function App() {
       <Route path="/signin" 
       element={<div className='App'>
       {
-        currentForm === "Login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
+        currentForm === "Login" ? <MobLogin onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
       }
       </div>}>
       </Route>

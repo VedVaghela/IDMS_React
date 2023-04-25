@@ -1,3 +1,4 @@
+import './signin.css'
 import React, {useState} from "react";
 import drimg from '../../assets/drimg.png';
 // import AuthContext from "./AuthContext";
@@ -36,7 +37,7 @@ export const Login = (props) => {
             }
           };
 
-        axios.post("https://web-production-d445c.up.railway.app/users/login/", loginPayload, config)
+        axios.post("https://it262-proj-44tb.onrender.com/users/login/", loginPayload, config)
         .then(response => {
         //get token from response
         const token  =  response.data.data.access;
@@ -47,11 +48,15 @@ export const Login = (props) => {
         console.log(email)
         //set token to axios common header
         setAuthToken(token);
-        
+        console.log(response.data.is_doctor);
         //redirect user to home page
-      window.location.href = '/Dashboard'
+      
+      
     })
     .catch(err => console.log(err));
+
+    setEmail('');
+    setPassword('');
 };
     
 
