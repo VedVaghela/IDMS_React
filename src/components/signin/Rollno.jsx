@@ -3,9 +3,10 @@ import React, {useState} from "react";
 
 export const Rollno = () => {
     const [rollNo, setRollNo] = useState('')
+    const [medicalHistory, setMedicalHistory] = useState('')
 
-    const user_id = sessionStorage.getItem('user_id')
-    let uid = user_id -2;
+    const profile_id = sessionStorage.getItem('profile_id')
+    // let uid = user_id -2;
     const token = sessionStorage.getItem('token')
 
     const handleSubmit = (e) => {
@@ -17,7 +18,7 @@ export const Rollno = () => {
 
         var raw = JSON.stringify({
           "rollno": rollNo,
-          "user": user_id
+          "medical_history": medicalHistory
         });
 
         var requestOptions = {
@@ -27,12 +28,12 @@ export const Rollno = () => {
           redirect: 'follow'
         };
 
-        fetch(`https://it262-proj-44tb.onrender.com/users/profile/${uid}/`, requestOptions)
+        fetch(`https://it262-proj-44tb.onrender.com/users/profile/${profile_id}/`, requestOptions)
           .then(response => response.json())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));
     } 
-
+    console.log(profile_id);
     return(
         <main className="mainclass">
        
@@ -42,6 +43,8 @@ export const Rollno = () => {
         <form className="LoginForm" onSubmit={handleSubmit}>
             <label htmlFor="email"> Enter Your Student ID </label>
             <input value={rollNo} onChange={(e) => setRollNo(e.target.value)} type="number" id="rollno" name="rollno" />
+            <label className="select-option">Medical History</label>
+            <input type="text" className="MedicalHistory" value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)} name="medicalHistory" id="medicalHistory"/>
             <button className="loginButton"type="submit"> Continue</button>
         </form>
         <button className="linkbutton" >Don't have an account? Register Here</button>

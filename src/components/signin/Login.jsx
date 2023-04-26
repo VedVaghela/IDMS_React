@@ -30,6 +30,7 @@ export const Login = (props) => {
         }
 
         const config = {
+            mode: 'no-cors',
             headers:{
               'Content-Type': 'application/json',
               'Accept': 'application/json',
@@ -44,6 +45,7 @@ export const Login = (props) => {
         console.log(response.data.data.access)
         //set JWT token to local
         sessionStorage.setItem("token", token);
+        sessionStorage.setItem("profile_id",response.data.data.profile_id)
         console.log(token)
         console.log(email)
         //set token to axios common header

@@ -30,6 +30,7 @@ export const MobLogin = (props) => {
         }
 
         const config = {
+            mode: 'no-cors',
             headers:{
               'Content-Type': 'application/json',
               'Accept': 'application/json',
@@ -44,9 +45,10 @@ export const MobLogin = (props) => {
         console.log(response)
         //set JWT token to local
         sessionStorage.setItem("token", token);
-        sessionStorage.setItem("id",response.data.data.user_id)
+        sessionStorage.setItem("profile_id",response.data.data.profile_id)
+        sessionStorage.setItem("name",response.data.data.stude)
         console.log(token)
-        console.log(response.data.data.user_id)
+        console.log(response.data.data.profile_id)
         //set token to axios common header
         setAuthToken(token);
         console.log(response.data.data)

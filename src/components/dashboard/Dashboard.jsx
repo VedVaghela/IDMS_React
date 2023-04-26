@@ -13,7 +13,7 @@ const [appointments, setAppointments] = useState([])
 const token = sessionStorage.getItem("token")
 
 useEffect( () => {
-    fetch('https://web-production-d445c.up.railway.app/appointments/appointment/', {
+    fetch('https://it262-proj-44tb.onrender.com/appointments/appointment/', {
             method: 'GET',
             headers: {
             //    'Content-type': 'application/json',
@@ -69,26 +69,26 @@ useEffect( () => {
                 <div className="appointmentsbox">
                 <h3 className="todayapt">Today's Appointments</h3>
                 <hr></hr>
-                <div className="apmt">
+                {/* <div className="apmt">
                     <div className="apmt-rollno">202152343</div>
                     <div className="apmt-name">Ved Vaghela</div>
-                    {/* <div className="apmt-no">1</div> */}
+                    <div className="apmt-no">1</div>
                 </div>
                 <div className="apmt">
                 <div className="apmt-rollno">202152318</div>
                     <div className="apmt-name">Krish Patel</div>
-                    {/* <div className="apmt-no">2</div> */}
+                    <div className="apmt-no">2</div>
                 </div>
                 <div className="apmt">
                 <div className="apmt-rollno">202152311</div>
                     <div className="apmt-name">Deepak Gohil</div>
-                    {/* <div className="apmt-no">3</div> */}
+                    <div className="apmt-no">3</div>
                 </div>
                 <div className="apmt">
                 <div className="apmt-rollno">202152309</div>
                     <div className="apmt-name">Dharmik Jethva</div>
-                    {/* <div className="apmt-no">4</div> */}
-                </div>
+                    <div className="apmt-no">4</div>
+                </div> */}
 
                 <ol className="custom-counter">
                     {appointments.map(appt => ( <li  className="apmt" key={appointments.student_data}><div className="apmt-name">{appt.student_data.name}</div> <div className="apmt-rollno" >{appt.student_data.rollno} </div></li> ))}
