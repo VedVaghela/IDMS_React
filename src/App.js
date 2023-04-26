@@ -15,6 +15,8 @@ import { MobStudentProfile } from "./components/studentprofile/MobStudentProfile
 import { MobBookAppointment } from "./components/book/MobBookAppointment";
 import { MobLogin } from "./components/signin/MobLogin";
 import { Prescription } from "./components/prescription/Prescription";
+import { Broadcast } from "./components/broadcast/Broadcast.jsx";
+import { Rollno } from "./components/signin/Rollno";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -49,6 +51,10 @@ function App() {
       <Route path="/studentprofile" element={window.innerWidth - 600 < 0 ? (<MobStudentProfile/>) : (<StudentProfile/>)}>
       </Route>
       <Route path="/prescription" element={<Prescription/>}>
+      </Route>
+      <Route path="/broadcast" element={<Broadcast/>}>
+      </Route>
+      <Route path="/rollnopatch" element={<Rollno/>}>
       </Route>
     </Routes>
     </BrowserRouter>

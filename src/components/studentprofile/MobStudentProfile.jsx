@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SideNav } from "../SideNav";
+import { SideNav } from "../navbar/SideNav";
 import { TopNav } from "../TopNav";
 import "./StudentProfile.css";
 import { Link } from "react-router-dom";

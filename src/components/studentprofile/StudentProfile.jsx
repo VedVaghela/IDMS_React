@@ -1,4 +1,4 @@
-import { SideNav } from "../SideNav"
+import { SideNav } from "../navbar/SideNav"
 import './StudentProfile.css'
 
 export const StudentProfile = () => {

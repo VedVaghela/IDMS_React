@@ -1,4 +1,4 @@
-import { SideNav } from "../SideNav"
+import { SideNav } from "../navbar/SideNav"
 import dr from "../../assets/dr.png"
 import { TopNav } from "../TopNav"
 // import mimg from "../assets/myimg.jpg"

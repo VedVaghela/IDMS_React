@@ -1,8 +1,8 @@
-import './Prescription.css'
+import './Broadcast.css'
 import { SideNav } from '../navbar/SideNav'
 import { useEffect } from 'react'
 
-export const Prescription = () => {
+export const Broadcast = () => {
 
     const token = sessionStorage.getItem("token")
 
@@ -11,7 +11,7 @@ export const Prescription = () => {
         <div className="mainc">
             <SideNav/>
            <div className='title-container'>
-           <h4 className='pageTitle'>Prescription</h4>
+           <h5 className='pageTitle'>Message from the Doctor !</h5>
            </div>
            <div className='presc-container'>
 

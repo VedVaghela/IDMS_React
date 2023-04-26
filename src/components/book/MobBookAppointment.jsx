@@ -7,7 +7,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
  import './BookAppointment.css'   
 //core
 import "primereact/resources/primereact.min.css"; 
-import { SideNav } from "../SideNav";
+import { SideNav } from "../navbar/SideNav";
 import DatePicker from "react-horizontal-datepicker";
  
 

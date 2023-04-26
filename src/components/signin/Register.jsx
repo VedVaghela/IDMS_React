@@ -60,7 +60,12 @@ export const Register = (props) => {
         //  redirect: 'follow'
       })
          .then((res) => res.json())
-         .then((data)=>console.log(data))
+         .then((response)=>{console.log(response.data.id)
+          sessionStorage.setItem("user_id",response.data.id)
+          if(!response.data.is_doctor){
+            window.location.href='/rollnopatch'
+          }
+          })
          // .then((post) => {
          //    setPosts((posts) => [post, ...posts]);
          //    setEmail('');

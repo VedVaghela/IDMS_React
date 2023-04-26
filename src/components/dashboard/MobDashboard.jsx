@@ -1,9 +1,10 @@
-import { SideNav } from "../SideNav";
+import { SideNav } from "../navbar/SideNav";
 import dr from "../../assets/dr.png";
 import { TopNav } from "../TopNav";
 // import mimg from "../assets/myimg.jpg"
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
+import {DocNav} from "../navbar/DocNav";
 
 export const MobDashboard = () => {
   const [appointments, setAppointments] = useState([]);
@@ -47,7 +48,7 @@ export const MobDashboard = () => {
   return (
     <div className="mainc">
       <TopNav />
-      <SideNav />
+      <DocNav />
       {/* {window.innerWidth - 600 < 0 ? ("") : (<SideNav/>)} */}
       <div className="dashboard-container">
         <img className="dbimg" src={dr} />
