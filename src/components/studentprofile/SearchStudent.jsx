@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { SideNav } from "../navbar/SideNav";
+import { DocNav } from "../navbar/DocNav";
 import { TopNav } from "../TopNav";
 import "./StudentProfile.css";
 import { Link } from "react-router-dom";
 
-export const MobStudentProfile = () => {
-  const [pastAppointments, setPastAppointments] = useState([]
-    // {date: [],
-    // prescription_id: [],
-    // prev: []}
-  );
+export const SearchStudent = () => {
+  const [pastAppointments, setPastAppointments] = useState([]);
   const [userDetail, setUserDetail] = useState({
     name: [],
     rollno: []
   })
+  const [searchID, setSearchID] = useState([])
 
   const token = sessionStorage.getItem("token");
   console.log(token);
@@ -63,21 +60,7 @@ export const MobStudentProfile = () => {
       
       .then((response) => response.json())
       .then(res => setPastAppointments(res))
-        // if(response.status === 404){
-        // setPastAppointments({
-        //     prev: 0
-        // })
-        //  }
-        
-    //   .then((res) =>{
-    //     setPastAppointments({
-    //       date: res?.date,
-    //       name: res?.student_data.name,
-    //       rollno: res?.student_data.rollno,
-    //       prev: 1
-    //     })}
-    
-    //     )
+
       .then((result) => console.log(result))
       //   .then(console.log(pastAppointments))
       .catch((error) => console.log("error", error));
@@ -86,31 +69,16 @@ export const MobStudentProfile = () => {
     //   console.log(pastAppointments.map(apt => apt.date));
   }, []);
 
-  //prescription ids
-  // useEffect(()=>{
-  //     var myHeaders = new Headers();
-  //     myHeaders.append("Accept", "application/json");
-  //     myHeaders.append("Authorization", `Bearer ${token}` );
-  //     var requestOptions = {
-  //       method: 'GET',
-  //       headers: myHeaders,
-  //       redirect: 'follow'
-  //     };
-
-  //     fetch("https://it262-proj-44tb.onrender.com/appointments/prescription/", requestOptions)
-  //       .then(response => response.text())
-  //       .then(result => console.log(result))
-  //       .catch(error => console.log('error', error));
-  // },[])
 
   console.log(pastAppointments?.data?.map(apmt => apmt.date));
 
   return (
     <div className="bgcontainer">
-      <SideNav />
+      <DocNav />
       {/* <TopNav/> */}
-      <h2 className="student-title">Your Profile</h2>
+      <h2 className="student-title">Search Profile</h2>
       <div className="mainc-profile">
+      <input className="inputid" type="text" value={searchID} onChange={(e) => setSearchID(e.target.value)} name="searchID" id="searchID" />
         <div className="profilebox" id="studentbox">
           {/* <h2 className="sname">{pastAppointments.name}</h2>
           <h3 className="srollno">{pastAppointments.rollno}</h3> */}

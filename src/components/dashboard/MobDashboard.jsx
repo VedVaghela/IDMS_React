@@ -13,7 +13,7 @@ export const MobDashboard = () => {
   const token = sessionStorage.getItem("token");
 
   useEffect(() => {
-    fetch("https://it262-proj-44tb.onrender.com/appointments/appointment/", {
+    fetch("http://127.0.0.1:8000/appointments/appointment/", {
       method: "GET",
       headers: {
         //    'Content-type': 'application/json',

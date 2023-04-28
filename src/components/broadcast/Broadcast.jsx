@@ -14,7 +14,7 @@ export const Broadcast = () => {
            <h5 className='pageTitle'>Message from the Doctor !</h5>
            </div>
            <div className='presc-container'>
-
+                Take Precautions. Wear Masks
            </div>
         </div>
     )

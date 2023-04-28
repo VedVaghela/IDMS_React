@@ -50,7 +50,7 @@ export const Register = (props) => {
          "phone":phone
         }
         
-        fetch('https://it262-proj-44tb.onrender.com/users/register/', {
+        fetch('http://127.0.0.1:8000/users/register/', {
          method: 'POST',
          body: JSON.stringify(data),
          headers: {
@@ -62,9 +62,9 @@ export const Register = (props) => {
          .then((res) => res.json())
          .then((response)=>{console.log(response.data.id)
           sessionStorage.setItem("user_id",response.data.id)
-          if(!response.data.is_doctor){
-            window.location.href='/rollnopatch'
-          }
+          // if(!response.data.is_doctor){
+          //   window.location.href='/rollnopatch'
+          // }
           })
          // .then((post) => {
          //    setPosts((posts) => [post, ...posts]);
