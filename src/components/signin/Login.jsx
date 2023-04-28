@@ -38,7 +38,7 @@ export const Login = (props) => {
             }
           };
 
-        axios.post("https://it262-proj-44tb.onrender.com/users/login/", loginPayload, config)
+        axios.post("http:/127.0.0.1:8000/users/login/", loginPayload, config)
         .then(response => {
         //get token from response
         const token  =  response.data.data.access;

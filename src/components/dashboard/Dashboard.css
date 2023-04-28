@@ -309,7 +309,7 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         width: 80%;
       }
       .apmt-rollno{
-        width: 20%;
+        width: 50%;
         height: auto;
         color: #C6C4FF;
         /* border-style: solid;
@@ -317,7 +317,7 @@ background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%); */
         border-right: black; */
       }
       .apmt-name{
-        width: 60%;
+        width: 80%;
         height: auto;
         text-align: left;
         font-weight: 500;

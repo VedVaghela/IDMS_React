@@ -17,6 +17,8 @@ import { MobLogin } from "./components/signin/MobLogin";
 import { Prescription } from "./components/prescription/Prescription";
 import { Broadcast } from "./components/broadcast/Broadcast.jsx";
 import { Rollno } from "./components/signin/Rollno";
+import { DocBroadcast } from "./components/broadcast/DocBroadcast";
+import { SearchStudent } from "./components/studentprofile/SearchStudent";
 // import { AuthContextProvider } from "./components/AuthContext";
 
 
@@ -54,7 +56,11 @@ function App() {
       </Route>
       <Route path="/broadcast" element={<Broadcast/>}>
       </Route>
+      <Route path="/docbroadcast" element={<DocBroadcast/>}>
+      </Route>
       <Route path="/rollnopatch" element={<Rollno/>}>
+      </Route>
+      <Route path="/searchuser" element={<SearchStudent/>}>
       </Route>
     </Routes>
     </BrowserRouter>

@@ -22,7 +22,7 @@ export const MobBookAppointment = () => {
     const token = sessionStorage.getItem("token")
 
       useEffect(() => {
-        fetch('https://it262-proj-44tb.onrender.com/appointments/symptom/', {
+        fetch('http://127.0.0.1:8000/appointments/symptom/', {
           method: 'GET',
           headers: {
              'Accept': 'application/json',
@@ -47,7 +47,7 @@ export const MobBookAppointment = () => {
          "extra_symptoms" : otherSymptoms
         }
 
-        fetch('https://it262-proj-44tb.onrender.com/appointments/appointment/', {
+        fetch('http://127.0.0.1:8000/appointments/appointment/', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
