@@ -28,7 +28,7 @@ export const Rollno = () => {
           redirect: 'follow'
         };
 
-        fetch(`http://127.0.0.1:8000/users/profile/${profile_id}/`, requestOptions)
+        fetch(`${process.env.REACT_APP_API_URL}/users/profile/${profile_id}/`, requestOptions)
           .then(response => response.json())
           .then(result => console.log(result))
           .catch(error => console.log('error', error));

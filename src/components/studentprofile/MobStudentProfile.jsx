@@ -31,7 +31,7 @@ export const MobStudentProfile = () => {
       headers: myHeaders,
       redirect: 'follow'
     };
-    fetch(`http://127.0.0.1:8000/users/profile/${uid}/`, requestOptions)
+    fetch(`${process.env.REACT_APP_API_URL}/users/profile/${uid}/`, requestOptions)
       .then(response => response.json())
       .then(res => {
         setUserDetail({
@@ -57,7 +57,7 @@ export const MobStudentProfile = () => {
     };
 
     fetch(
-      `http://127.0.0.1:8000/appointments/appointment/`,
+      `${process.env.REACT_APP_API_URL}/appointments/appointment/`,
       requestOptions
     )
       

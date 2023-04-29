@@ -13,7 +13,7 @@ export const MobDashboard = () => {
   const token = sessionStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/appointments/appointment/", {
+    fetch(`${process.env.REACT_APP_API_URL}/appointments/appointment/`, {
       method: "GET",
       headers: {
         //    'Content-type': 'application/json',

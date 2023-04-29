@@ -22,7 +22,7 @@ export const MobBookAppointment = () => {
     const token = sessionStorage.getItem("token")
 
       useEffect(() => {
-        fetch('http://127.0.0.1:8000/appointments/symptom/', {
+        fetch(`${process.env.REACT_APP_API_URL}/appointments/symptom/`, {
           method: 'GET',
           headers: {
              'Accept': 'application/json',
@@ -47,7 +47,7 @@ export const MobBookAppointment = () => {
          "extra_symptoms" : otherSymptoms
         }
 
-        fetch('http://127.0.0.1:8000/appointments/appointment/', {
+        fetch(`${process.env.REACT_APP_API_URL}/appointments/appointment/`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

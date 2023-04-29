@@ -22,7 +22,7 @@ export const BookAppointment = () => {
     const token = sessionStorage.getItem("token")
 
       useEffect(() => {
-        fetch('https://web-production-d445c.up.railway.app/appointments/symptom/', {
+        fetch(`${process.env.REACT_APP_API_URL}/appointments/symptom/`, {
           method: 'GET',
           headers: {
              'Accept': 'application/json',
@@ -47,7 +47,7 @@ export const BookAppointment = () => {
          "extra_symptoms" : otherSymptoms
         }
 
-        fetch('https://web-production-d445c.up.railway.app/appointments/appointment/', {
+        fetch(`${process.env.REACT_APP_API_URL}/appointments/appointment/`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

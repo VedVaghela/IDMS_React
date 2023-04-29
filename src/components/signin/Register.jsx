@@ -50,7 +50,7 @@ export const Register = (props) => {
          "phone":phone
         }
         
-        fetch('http://127.0.0.1:8000/users/register/', {
+        fetch(`${process.env.REACT_APP_API_URL}/users/register/`, {
          method: 'POST',
          body: JSON.stringify(data),
          headers: {
